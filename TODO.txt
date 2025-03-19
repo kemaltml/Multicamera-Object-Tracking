@@ -1,16 +1,19 @@
-- CALCULATE ANGLE (https://www.youtube.com/watch?v=gISSSbYUZag&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=24)
-    - Detect object by color with opencv
-    - Find midpoint of the object in pixel coordinate 
-    - Find x and z angles of the object
-        - For x: Multiply Hfov with midpoint of the object
-        - For z: Multiply Vfov with midpoint of the object
-    - Do this for all cameras
+[ ] CALCULATE ANGLE (https://www.youtube.com/watch?v=gISSSbYUZag&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=24)
+    [x] Check if there is a orange color
+    [x] Detect object by color with opencv
+    [ ] Find midpoint of the object in pixel coordinate 
+    [ ] Find x and z angles of the object
+        [ ] For x: Multiply Hfov with midpoint of the object
+        [ ] For z: Multiply Vfov with midpoint of the object
+    [ ] Do this for all cameras
 
-- CALCULATE DISTANCE
-    - |AB|/sin(c) = |AC|sin(b) = |BC|/sin(a) Use this and find the distances of object by cameras 
-- CALCULATE COORDINATE
-    - Now you have angle and distance of all cameras.
-    - distance = [(y1-y)^2 + (x1-x)^2]^1/2 You will get equations up to number of cameras.
-    - You have to calculate x and y by equations. 
-        - You can use matrix multiplication
-- COMPARE COORDINATES
+[ ] CALCULATE DISTANCE
+    [ ] |AB|/sin(c) = |AC|sin(b) = |BC|/sin(a) Use this and find the distances of object by cameras 
+    [ ] may be recursively 
+    
+[ ] CALCULATE COORDINATE
+    [ ] Now you have angle and distance of all cameras.
+    [ ] distance = [(y1-y)^2 + (x1-x)^2]^1/2 You will get equations up to number of cameras.
+    [ ] You have to calculate x and y by equations. 
+        [ ] You can use matrix multiplication
+[ ] COMPARE COORDINATES

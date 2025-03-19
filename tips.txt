@@ -37,3 +37,7 @@ One Class = One File
 name like this:
 class file name = class_file_name.py 
 class name = ClassName 
+
+RUN C CODE IN PYTHON 
+`import ctypes`
+
