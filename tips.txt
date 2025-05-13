@@ -1,43 +1,41 @@
-let the package be like:
-
-physics
-|_ __init__.py 
-|_ angular.momentum.py 
-|_ forces.py 
-|_ gravity.py 
-main.py 
-
-NUMBER 1
-Use modules and packages 
-
-"__init__.py" makes the "physics" directory a package. So you can import in the "main.py" like:
-
-```python
-import physics
-```
-
-When you run the "main.py" it will automatically runs one time the imported packages "__init__.py" file.
-
-init: initialize
-
-if you do this in "__init__.py"
-```python 
-from .forces import Forces 
-# forces is the file name and Forces is the class name 
-```
-
-you can use in the "main.py" like this 
-```python
-from physics import Forces
-```
-
-NUMBER 2
-One Class = One File 
-
-name like this:
-class file name = class_file_name.py 
-class name = ClassName 
-
-RUN C CODE IN PYTHON 
-`import ctypes`
-
+main:
+    input: none
+    output: none 
+detect_object:
+    input: 
+        - image
+        - mask_path
+        - flag
+        - i
+    output:
+        - return flag 
+        - masked images
+calculate_angle:
+    input:
+        - image_directory
+        - assets
+        - image_number
+        - flags
+        - CAMS
+    output:
+        - return:
+            - triangle_angles_xy
+            - triangle_angles_3d
+calculate_distance:
+    input:
+        - triangle_angles_xy
+        - triangle_angles_3d
+        - flags
+        - CAMS
+    output:
+        -return:
+            - vectors_xy
+            - vectors_3d
+            - heights
+calculate_coordinate:
+    input:
+        - vectors_xy
+        - vectors_3d
+        - CAMS 
+    output:
+        return x,y,z

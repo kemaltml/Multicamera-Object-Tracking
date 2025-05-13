@@ -1,3 +1,7 @@
+"""
+In this library, you can find wished hsv values for object detection by color"
+"""
+
 import cv2
 import numpy as np
 

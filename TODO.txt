@@ -1,19 +1,30 @@
-[ ] CALCULATE ANGLE (https://www.youtube.com/watch?v=gISSSbYUZag&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=24)
+[x] CALCULATE ANGLE (https://www.youtube.com/watch?v=gISSSbYUZag&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=24)
     [x] Check if there is a orange color
     [x] Detect object by color with opencv
-    [ ] Find midpoint of the object in pixel coordinate 
-    [ ] Find x and z angles of the object
-        [ ] For x: Multiply Hfov with midpoint of the object
-        [ ] For z: Multiply Vfov with midpoint of the object
-    [ ] Do this for all cameras
+    [x] Find midpoint of the object in pixel coordinate 
+    [x] Find angle of the object
+        [x] For z: Multiply Hfov with midpoint of the object
+        [x] For x: Multiply Vfov with midpoint of the object
+    [-] Find distance with known radius
+    [x] Do this for all cameras
 
-[ ] CALCULATE DISTANCE
-    [ ] |AB|/sin(c) = |AC|sin(b) = |BC|/sin(a) Use this and find the distances of object by cameras 
-    [ ] may be recursively 
+[x] CALCULATE DISTANCE
+    [x] |AB|/sin(c) = |AC|sin(b) = |BC|/sin(a) Use this and find the distances of object by cameras 
+        [x] Find xy distance 
+        [x] Find z altitude with sinus theorem
+        [x] Find 3D vector from cam to object with vector = math.sqrt(z**2 + distance_xy^2)
+    [-] may be recursively 
     
-[ ] CALCULATE COORDINATE
-    [ ] Now you have angle and distance of all cameras.
-    [ ] distance = [(y1-y)^2 + (x1-x)^2]^1/2 You will get equations up to number of cameras.
-    [ ] You have to calculate x and y by equations. 
-        [ ] You can use matrix multiplication
+[x] CALCULATE COORDINATE
+    [x] Now you have angle and distance of all cameras.
+    [x] distance = [(y1-y)^2 + (x1-x)^2]^1/2 You will get equations up to number of cameras.
+        find x and y from vectors_xy and then find z with x and y coordinates
+    [x] You have to calculate x and y by equations. 
+        [-] You can use matrix multiplication
 [ ] COMPARE COORDINATES
+7.489 3.996 0.1316
+[ ] There is
+	0.1467% in x
+	0.1% in y
+	12.27% in z error. FIX IT
+	
