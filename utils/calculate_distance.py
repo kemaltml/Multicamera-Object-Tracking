@@ -1,6 +1,5 @@
 import math
 import numpy as np 
-
 WIDTH = 1920
 HEIGHT = 1080
 FRAME_CENTER_X = WIDTH/2
@@ -43,7 +42,7 @@ def CalculateDistance(triangle_angles_xy, triangle_angles_3d, flags, CAMS):
         heights.append(height)
         vector = math.sqrt((height**2) + vectors_xy[i]**2)
         vectors_3d.append(round(vector, 2))
-
+    print('DISTANCE CALCULATION IS DONE')
     return vectors_xy, vectors_3d, heights
 
 def CamDistance(CAMS):

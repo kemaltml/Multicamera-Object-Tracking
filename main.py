@@ -62,6 +62,9 @@ def main(args=None):
     print(colored('COORDINATE CALCULATION PROCESS STARTING', 'red'))
     coordinates = CalculateCoordinate(vectors_xy, vectors_3d, CAMS)
     print(colored('COORDINATE CALCULATION PROCESS DONE', 'red'))
-    print(f'x: {coordinates[0]:.4f}, y: {coordinates[1]:.4f}, z: {coordinates[2]:.4f}')
+    error_x = (7.5 - coordinates[0])/7.5 * 100
+    error_y = (4-coordinates[1])/4 * 100
+    error_z = (0.15-coordinates[2])/0.15 * 100 
+    print(f'\nx: {coordinates[0]:.4f} error: {error_x:.3f} %\ny: {coordinates[1]:.4f} error: {error_y:.3f} %\nz: {coordinates[2]:.4f} error: {error_z:.3f} %')
 if __name__ == '__main__':
     main()

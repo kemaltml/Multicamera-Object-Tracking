@@ -88,14 +88,14 @@ def CalculateAngleHorizontal(origins,  FRAME_CENTER_X, ANGLE_PER_PIXEL_X, image_
             f'ang_oc0c5: {triangle[5][1]}, '
             f'obj_ang: {triangle[5][2]}')
 
-
+    print('ANGLE CALCULATION PROCESS IN XY IS DONE\n')
 
     return triangle
 
 def CalculateAngleVertical(origins, FRAME_CENTER_Y, ANGLE_PER_PIXEL_Y, image_number):
     triangle_3d = []
     frame_angles = []
-
+    print('ANGLE CALCULATION PROCESS IN Z IS STARTING\n')
     for i in range(image_number):
         frame_angles.append((FRAME_CENTER_Y - origins[i][1]) * (ANGLE_PER_PIXEL_Y + 0.0131))
 
@@ -104,10 +104,11 @@ def CalculateAngleVertical(origins, FRAME_CENTER_Y, ANGLE_PER_PIXEL_Y, image_num
         obj_ang = round(90 - cam_ang,4) 
         triangle_3d.append([cam_ang, obj_ang])
         print(f'cam {i} angle: {cam_ang}, obj_angle: {obj_ang}')
-
+    print('ANGLE CALCULATION PROCESS IN Z IS DONE\n')
     return triangle_3d
 
 def FindOrigins(image_directory, assets, image_number, flags):
+    print('Finding Origins\n')
     origins = []
     for i in range(image_number):
         if flags[i] == 1:
@@ -126,4 +127,5 @@ def FindOrigins(image_directory, assets, image_number, flags):
                 print(f'COULD NOT DETERMONE THE CENTER OF THE OBJECT {i}')
         else:
             print(f'IAMGE {i} HAS NO ORANGE COLOR')
+    print('Found Origins\n')
     return origins 

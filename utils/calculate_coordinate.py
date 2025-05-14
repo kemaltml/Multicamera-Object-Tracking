@@ -1,6 +1,5 @@
 import numpy as np 
 from scipy.optimize import least_squares
-
 def CalculateCoordinate(vectors_xy, vectors_3d, CAMS):
     print('CALCULATE COORDINATE PROCESS STARTING')
     print('Finding X and Y Point')
@@ -25,6 +24,7 @@ def CalculateCoordinate(vectors_xy, vectors_3d, CAMS):
     
     z = 3 - round(np.mean(height),4)
     print(f'z: {z:.4f}')
+    print('CALCULATE COORDINATE PROCESS DONE')
     return [x, y, z]
 
 def equations_xy(vars, vectors_xy, CAMS):
