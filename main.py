@@ -50,7 +50,6 @@ def main(args=None):
             flags = [1, 1, 1, 1, 1, 1]
     print(print('-------------------------\n', colored('OBJECT DETECTION PROCESS DONE', 'red'), f'\t<<FLAGS: {flags}>>\n'))
     
-
     print(colored('ANGLE CALCULATION PROCESS STARTING', 'red'))
     triangle_angles_xy, triangle_angles_3d = CalculateAngle(image_directory, assets, image_number, flags, CAMS)
     print(colored('ANGLE CALCULATION PROCESS DONE', 'red'))

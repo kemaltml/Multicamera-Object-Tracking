@@ -9,13 +9,14 @@ FRAME_CENTER_Y = HEIGHT/2
 HFOV = math.radians(90)
 VFOV = HFOV * (HEIGHT/WIDTH)
 
-ANGLE_PER_PIXEL_X = math.degrees(HFOV) / WIDTH
-ANGLE_PER_PIXEL_Y = math.degrees(VFOV) / HEIGHT
+ANGLE_PER_PIXEL = math.degrees(HFOV) / WIDTH
+
+print(f'ANGLE_PER_PIXEL_X: {ANGLE_PER_PIXEL}, ANGLE_PER_PIXEL: {ANGLE_PER_PIXEL}')
 
 def CalculateAngle(image_directory, assets, image_number, flags, CAMS):
     print('FINDING ORIGINS OF THE OBJECT')
     origins = FindOrigins(image_directory, assets, image_number, flags)
-
+    print(origins)
     triangle_angles_xy = []
     triangle_angles_3d = []
 
@@ -28,8 +29,8 @@ def CalculateAngle(image_directory, assets, image_number, flags, CAMS):
     # 1: 90-Object-Camera corner 
     # 2: 90-Camera-Object corner
 
-    triangle_angles_xy = CalculateAngleHorizontal(origins, FRAME_CENTER_X, ANGLE_PER_PIXEL_X, image_number, CAMS)
-    triangle_angles_3d = CalculateAngleVertical(origins, FRAME_CENTER_Y, ANGLE_PER_PIXEL_Y, image_number)
+    triangle_angles_xy = CalculateAngleHorizontal(origins, FRAME_CENTER_X, ANGLE_PER_PIXEL, image_number, CAMS)
+    triangle_angles_3d = CalculateAngleVertical(origins, FRAME_CENTER_Y, ANGLE_PER_PIXEL, image_number)
 
     return triangle_angles_xy, triangle_angles_3d
 
@@ -37,7 +38,7 @@ def CalculateAngleHorizontal(origins,  FRAME_CENTER_X, ANGLE_PER_PIXEL_X, image_
     frame_angles = []
     triangle = []
     for i in range(image_number):
-        frame_angles.append((FRAME_CENTER_X - origins[i][0]) * (ANGLE_PER_PIXEL_X + 0.0131))
+        frame_angles.append((FRAME_CENTER_X - origins[i][0]) * (ANGLE_PER_PIXEL_X + 0.01314))
 
     print('ANGLE CALCULATION PROCESS IN XY IS STARTING\n')
     ang_oc0c1 = round(CAMS[0].angle.z + frame_angles[0], 4)
@@ -92,12 +93,12 @@ def CalculateAngleHorizontal(origins,  FRAME_CENTER_X, ANGLE_PER_PIXEL_X, image_
 
     return triangle
 
-def CalculateAngleVertical(origins, FRAME_CENTER_Y, ANGLE_PER_PIXEL_Y, image_number):
+def CalculateAngleVertical(origins, FRAME_CENTER_Y, ANGLE_PER_PIXEL, image_number):
     triangle_3d = []
     frame_angles = []
     print('ANGLE CALCULATION PROCESS IN Z IS STARTING\n')
     for i in range(image_number):
-        frame_angles.append((FRAME_CENTER_Y - origins[i][1]) * (ANGLE_PER_PIXEL_Y + 0.0131))
+        frame_angles.append((FRAME_CENTER_Y - origins[i][1]) * (ANGLE_PER_PIXEL + 0.01314))
 
     for i in range(image_number):
         cam_ang = round(60 + frame_angles[i],4)
