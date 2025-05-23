@@ -23,8 +23,12 @@
         [-] You can use matrix multiplication
 [ ] COMPARE COORDINATES
 7.489 3.996 0.1316
-[ ] There is
-	0.1467% in x
-	0.1% in y
-	12.27% in z error. FIX IT
-	
+
+'''
+There is
+	0.0.80% in x
+	0.0.75% in y
+	13.133% in z error. FIX IT
+'''
+
+[ ] Topun radius uzunluğunu bulunan uzunluklara ekle. Çünkü topun merkezi yerine yüzeyini görüyorsun. 
