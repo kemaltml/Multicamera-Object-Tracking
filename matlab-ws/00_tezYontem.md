@@ -5,14 +5,14 @@
 
 ![image](report_datas/blender.png)
 
-<center>"report_datas/blender.png"</center>
+<center>report_datas/blender.png</center>
 
 
 Oluşturulan ortamda kamera kalibrasyon aşaması için 9x8 boyutunda ve her kare 30cm boyutunda siyah beyaz renklerinde damalı nesne oluşturuldu. Şekil 2'de blender ortamındaki kamerada damalı nesne görülebilir.
 
 ![image](inputs/calibrationPhotos/single/cam_0/cam0_30.png)
 
-<center>"inputs/calibrationPhotos/single/cam_0/cam0_30.png"</center>
+<center>inputs/calibrationPhotos/single/cam_0/cam0_30.png</center>
 
 Oluşturulan damalı zemin, farklı koordinatlar ve açılarda her kamera için 40'ar adet olacak şekilde fotoğraf oluşturmak için kullanılmıştır. Bu fotoğraflar kullanılarak her kamera matlab uygulaması içerisindeki kamera kalibrasyon eklentisi kullanılarak tek tek kalibre edilmiş ve sonuçları ve verileri daha sonra kullanmak için kaydedilmiştir. Kalibrasyon işleminin amacı kameraya ait odak uzaklığı, optik merkez, radyal bozulma, teğetsel bozulma ve piksel ölçeğinde sapma değeri elde etmektir. 
 
@@ -131,6 +131,7 @@ R_{s31}&R_{s32}&R_{s33} & T_{s3}\\
 0&0&0&1
 \end{bmatrix}
 $$
+
 Burada $R_s$ rotasyon matrisini, $T_s$ translasyon matrisini temsil etmektedir. Translasyon matrisini hesaplamak için $T_s = -R_s \cdot C$ formülü kullanılır. Bu formüldeki $C$ kameranın pozisyonunu içeren 3x1 boyutundaki sütun matrisidir. Hesaplanan bu matris her kameranın merkez olarak kabul edilen noktaya göre nerede ve hangi açıda bulunduğu bilgisini içermektedir. Hesaplamaların ardından simülasyon ortamında kameraların görüntüsü Şekil 4'de görülebilir.
 
 ![image](report_datas/camera_positions.png)
