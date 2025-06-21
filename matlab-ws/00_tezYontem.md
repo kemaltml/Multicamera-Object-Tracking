@@ -144,7 +144,10 @@ $$
 \text{noktanın 3 boyuttaki koordinatları}\\
 A = 
 \begin{bmatrix}
-x\\y\\z\\1 
+x\\
+y\\
+z\\
+1 
 \end{bmatrix}\\
 $$
 
