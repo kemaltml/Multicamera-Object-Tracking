@@ -48,10 +48,13 @@ Sapma değeri, kalibrasyonun doğruluğunu belirtir. Kalibrasyon sonucunda elde 
 $$
 e_i = \sqrt{(x_i - \hat{x})^2 + (y_i - \hat{y})^2}
 $$
+
 şeklinde hesaplanır. Tüm noktalar için ise
+
 $$
 RMS = \sqrt{\frac{1}{N} \sum_{i=1}^N e_i^2}
 $$
+
 formülü kullanılarak bu hata payı hesaplanır.
 
 Şekil 3'de kalibrasyon sonucu ve hata payı görülebilir. Kalibrasyon sonucu kameranın odak uzaklığı, optik merkez, radyal bozulma, teğetsel bozulma ve piksel ölçeğinde sapma değeri elde edilmiştir. 
