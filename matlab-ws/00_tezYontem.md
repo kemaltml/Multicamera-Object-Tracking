@@ -339,3 +339,31 @@ Hata düzeltmelerinden sonra oluşan grafik Şekil 8'de görülebilir.
 Şekil 9'da ise hatalı ve düzeltilmiş koordinatların karşılarştırması görülebilir.
 
 ![report_datas/path_comparison.png](report_datas/path_comparison.png)
+
+---
+\newpage
+
+# Sonuç
+Anlatılan yöntem ve tekniklerin simülasyon dışında, gerçek dünyada kullanılabilirliği ve doğruluğunu test edebilmek için laboratuvar ortamında 3 adet ip kamera kullanılarak Şekil 10'da görülebilen bir ortam hazırlanmıştır. 
+
+"telefondan damalı 3 kameralı fotoğraf koyulacak."
+
+Şekil 11'de görüleceği gibi, kameralar nxn boyutunda ve 90mm boyutunda damalı zemin kullanılarak kalibre edilmiş ve Tablo 3'de görülen değerler elde edilmiştir. 
+
+"Kalibrasyon sonucu intrinsics değerleri tablosu koyulacak"
+
+Bu veriler elde edildikten sonra turuncu tenis topunun maskelenebilmesi için HSV eşik değerleri yine MATLAB uygulaması kütüphaneleri kullanılarak her kamera için bulunmuş ve kullanılmıştır. Her kamera için farklı HSV eşik değerlerinin kullanılmasının nedeni, ortamda bulunan ışık kaynağının her kamera için farklı açılardan gelmesi nedeniyle topun renk ve ışık değerlerinin değişmesidir. 
+
+Kameraların rotasyon, transformasyon ve projeksiyon matrislerinin hesaplanabilmesi için Şekil 11'de sağ alt köşedeki kameranın x ve y konumları 0 kabul edilip, diğer kameraların konumları da bu kameraya göre ölçülmüş ve matrisler bu değerlerle hesaplanmıştır. 
+
+Gereken bütün veriler elde edildikten sonra kameraların video akışından fotoğraflar toplanarak sırasıyla görüntüdeki bozulmalar giderilmiş, obje tespiti için maskeleme yapılmış, tespit edilen objenin merkezi ve çerçevesi bulunmuş, bu değerlerle üçgenleme yapılmış ve obje konumu tespit edilmiştir. Bu işlemden elde edilen, topun işlem boyunca yaptığı hareketi Şekil 12'de görülebilir.
+
+"ball path grafiği ekle"
+
+Elde edilen veriler incelendiğinde %A kadar bir hatayla karşılaşılmıştır. Şekil 13'de olması gereken ve hesaplanan topun yolu görülebilir. Ayrıca X eksenindeki oluşan hataları Şekil 14'de, Y ekseni için oluşan hata Şekil 15'de görülebilir.
+
+"ball path hesaplanan ve gerçek yol grafiği ekle"
+"X ekseni hesaplanan ve gerçek değer grafiği ekle"
+"y ekseni hesaplanan ve gerçek değer grafiği ekle"
+
+Bu hata miktarı, kameraların birbirlerine çok yakın olması, kararsız ışık kaynağı, kamera görüntüsünün çözünürlüğünün düşük olması, kamera konumlarının ve açılarının doğruluğunun düşük olması, kamera sayısının az olması gibi nedenlerle açıklanabilir. Bu nedenlere karşın, tamamen kullanılamaz bir sistem olmadığı, çeşitli amaçlarla çeşitli çalışma alanlarında istenilen çözümü sunabilecek bir sistem oluşturulmuştur. Gösterilen hata oranı ve nedenleri düzeltilmeden de çok fazla hassasiyet gerekmeyen (uygulama alanları eklenecek) uygulamalarda oluşturulan sistem kullanılabilir ve güvenilebilirdir. Gerekli geliştirme çalışmaları ve aşamaları gerçekleştirildikten sonra hassasiyet gerektiren (uygulama alanları eklenecek) alanlarda güvenilir bir şekilde kullanılabilir bir sistem oluşturulmuştur. 
