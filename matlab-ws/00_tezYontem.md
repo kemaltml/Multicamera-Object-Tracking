@@ -346,11 +346,19 @@ Hata düzeltmelerinden sonra oluşan grafik Şekil 8'de görülebilir.
 # Sonuç
 Anlatılan yöntem ve tekniklerin simülasyon dışında, gerçek dünyada kullanılabilirliği ve doğruluğunu test edebilmek için laboratuvar ortamında 3 adet ip kamera kullanılarak Şekil 10'da görülebilen bir ortam hazırlanmıştır. 
 
-"telefondan damalı 3 kameralı fotoğraf koyulacak."
+![report_datas/real_env.jpg](report_datas/real_env.jpg)
 
 Şekil 11'de görüleceği gibi, kameralar nxn boyutunda ve 90mm boyutunda damalı zemin kullanılarak kalibre edilmiş ve Tablo 3'de görülen değerler elde edilmiştir. 
 
-"Kalibrasyon sonucu intrinsics değerleri tablosu koyulacak"
+|Parametre|Değer|Açıklama|
+|---------------------------|-----|--------|
+|Görüntü Boyutu (Y x G)|480x600|Piksel Cinsinden
+|Odak Uzaklığı ($f_x$, $f_y$)|(369.39, 490.27)|Piksel cinsinden|
+|Optik Merkez ($c_x$,$c_y$)|(320.59, 229.71|Piksel Cinsinden|
+|Radyal Bozulma | \[-0.348, 0.103\] | Merkeze uzaklıkla bozulma|
+|Teğetsel Bozulma| \[0, 0\] | Merkez dışı kayma|
+|Sapma Değeri | 0.1859 | RMS cinsinden hata değeri|
+
 
 Bu veriler elde edildikten sonra turuncu tenis topunun maskelenebilmesi için HSV eşik değerleri yine MATLAB uygulaması kütüphaneleri kullanılarak her kamera için bulunmuş ve kullanılmıştır. Her kamera için farklı HSV eşik değerlerinin kullanılmasının nedeni, ortamda bulunan ışık kaynağının her kamera için farklı açılardan gelmesi nedeniyle topun renk ve ışık değerlerinin değişmesidir. 
 
@@ -358,12 +366,13 @@ Kameraların rotasyon, transformasyon ve projeksiyon matrislerinin hesaplanabilm
 
 Gereken bütün veriler elde edildikten sonra kameraların video akışından fotoğraflar toplanarak sırasıyla görüntüdeki bozulmalar giderilmiş, obje tespiti için maskeleme yapılmış, tespit edilen objenin merkezi ve çerçevesi bulunmuş, bu değerlerle üçgenleme yapılmış ve obje konumu tespit edilmiştir. Bu işlemden elde edilen, topun işlem boyunca yaptığı hareketi Şekil 12'de görülebilir.
 
-"ball path grafiği ekle"
+![path_2.png](report_datas/path_2.png)
 
-Elde edilen veriler incelendiğinde %A kadar bir hatayla karşılaşılmıştır. Şekil 13'de olması gereken ve hesaplanan topun yolu görülebilir. Ayrıca X eksenindeki oluşan hataları Şekil 14'de, Y ekseni için oluşan hata Şekil 15'de görülebilir.
+Elde edilen veriler incelendiğinde x ekseninde %2.1978, y ekseninde %5.8824, z ekseninde %0.12 kadar bir hatayla karşılaşılmıştır. Şekil 13'de olması gereken ve hesaplanan topun yolu görülebilir. Ayrıca X eksenindeki oluşan hataları Şekil 14'de, Y ekseni için oluşan hata Şekil 15'de görülebilir.
 
-"ball path hesaplanan ve gerçek yol grafiği ekle"
-"X ekseni hesaplanan ve gerçek değer grafiği ekle"
-"y ekseni hesaplanan ve gerçek değer grafiği ekle"
+![real_vs_calc.png](report_datas/real_vs_calc.png)
+![real_vs_calc_x.png](report_datas/real_vs_calc_x.png)
+![real_vs_calc_y.png](report_datas/real_vs_calc_y.png)
+
 
 Bu hata miktarı, kameraların birbirlerine çok yakın olması, kararsız ışık kaynağı, kamera görüntüsünün çözünürlüğünün düşük olması, kamera konumlarının ve açılarının doğruluğunun düşük olması, kamera sayısının az olması gibi nedenlerle açıklanabilir. Bu nedenlere karşın, tamamen kullanılamaz bir sistem olmadığı, çeşitli amaçlarla çeşitli çalışma alanlarında istenilen çözümü sunabilecek bir sistem oluşturulmuştur. Gösterilen hata oranı ve nedenleri düzeltilmeden de çok fazla hassasiyet gerekmeyen (uygulama alanları eklenecek) uygulamalarda oluşturulan sistem kullanılabilir ve güvenilebilirdir. Gerekli geliştirme çalışmaları ve aşamaları gerçekleştirildikten sonra hassasiyet gerektiren (uygulama alanları eklenecek) alanlarda güvenilir bir şekilde kullanılabilir bir sistem oluşturulmuştur. 
